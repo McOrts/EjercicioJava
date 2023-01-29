@@ -4,21 +4,21 @@
 
 Cree una clase Alumno en Java con atributos:
 
-   1. Nombre de tipo String y ámbito privado.
+1. Nombre de tipo String y ámbito privado.
 ```java
 public class Alumnos {
     private String Nombre;
 }
 ```
 
-   2. Apellidos de tipo String y ámbito privado
+2. Apellidos de tipo String y ámbito privado
 ```java
 public class Alumnos {
     private String Apellidos;
 }
 ```
 
-   3. Edad de tipo Int de ámbito privado.
+3. Edad de tipo Int de ámbito privado.
 ```java
 public class Alumnos {
     private int Edad;
@@ -49,19 +49,19 @@ public class Alumno {
 	• Los métodos (get() y set()) que permitan consultar y modificar estos atributos.
 ```java  
   public String getNombre() {
-        return this.Nombre;
+        return salida.Nombre;
   }
   public void setNombre(String nombre) {
         salida.Nombre = nombre;
   }
   public String getApellidos) {
-        return this.Apellidos;
+        return salida.Apellidos;
   }
   public void setNombre(String apellidos) {
         salida.Apellidos = apellidos;
   }
   public String getEdad) {
-        return this.Edad;
+        return salida.Edad;
   }
   public void setNombre(String edad) {
         salida.Edad = edad;
@@ -103,10 +103,8 @@ for (Alumno a : alumnoArray) {
 
 Programe una web que tenga un formulario, pida los datos personales de una persona y realice las siguientes acciones:
 
-	• Una vez rellenos el nombre y los apellidos aparecerá un mensaje indicando “Usted es: nombre+apellidos”
-
-	• Una vez rellena la fecha de nacimiento muestre un mensaje indicando la edad del usuario de la web.
-
+- Una vez rellenos el nombre y los apellidos aparecerá un mensaje indicando “Usted es: nombre+apellidos”
+- 
 ```javascript
 <form action="process.php" method="post"> 
 Nombre: <input type="text" name="nombre" required/><br/> 
@@ -127,20 +125,48 @@ function validaFormulario() {
  
 </script>
 ```
+- Una vez rellena la fecha de nacimiento muestre un mensaje indicando la edad del usuario de la web.
 
-Cree un botón que al pulsarlo borre los datos del formulario y aparezca el formulario en blanco.
+```javascript
+<script>
+function calculaEdad(NacimientoValor) {
+    var hoy = new Date();
+    var fechanacimiento = new Date(NacimientoValor);
+    var edad = today.getFullYear() - fechanacimiento.getFullYear();
+    var m = hoy.getMonth() - fechanacimiento.getMonth();
+    if (m < 0 || (m === 0 && hoy.getDate() < fechanacimiento.getDate())) {
+        edad--;
+    }
+    return edad;
+}
+
+function MuestraEdad() { 
+ var NacimientoValor = calculaEdad(document.querySelector("input[name='nacimiento']").value);
+ alert("Edad " + NacimientoValor); 
+}
+
+var el = document.createElement('button');
+el.innerText = 'Muestra la edad';
+el.onclick = MuestraEdad;
+document.body.appendChild(el);
+
+</script>
+```
+
+- Cree un botón que al pulsarlo borre los datos del formulario y aparezca el formulario en blanco.
 
 ```javascript
 <script>
 
-function resetForm() { 
- document.querySelector("input[name='name']").value = "";
- document.querySelector("input[name='dob']").value = "";
+function FormularioBlanco() { 
+ document.querySelector("input[name='nombre']").value = "";
+ document.querySelector("input[name='apellidos']").value = "";
+ document.querySelector("input[name='nacimiento']").value = "";
 }
 
 var el = document.createElement('button');
-el.innerText = 'Reset';
-el.onclick = resetForm;
+el.innerText = 'Borra formulario';
+el.onclick = FormularioBlanco;
 document.body.appendChild(el);
 
 </script>
