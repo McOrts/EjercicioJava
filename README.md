@@ -104,7 +104,7 @@ for (Alumno a : alumnoArray) {
 Programe una web que tenga un formulario, pida los datos personales de una persona y realice las siguientes acciones:
 
 - Una vez rellenos el nombre y los apellidos aparecerá un mensaje indicando “Usted es: nombre+apellidos”
-- 
+
 ```javascript
 <form action="process.php" method="post"> 
 Nombre: <input type="text" name="nombre" required/><br/> 
