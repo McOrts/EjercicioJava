@@ -29,31 +29,64 @@ Incluya las siguientes funciones:
 
 	• Los constructores necesarios para crear un objeto alumno.
 ```java
-public class Alumnos {
+public class Alumno {
     private String Nombre;
     private String Apellidos;
     private int Edad;
 
-    public Alumnos(String nombre) {
-        this.Nombre = nombre;
+    public Alumno(String nombre) {
+        salida.Nombre = nombre;
     }
-    public Alumnos(String apellidos) {
-        this.Nombre = apellidos;
+    public Alumno(String apellidos) {
+        salida.Nombre = apellidos;
     }
-    public Alumnos(String edad) {
-        this.Edad = edad;
+    public Alumno(String edad) {
+        salida.Edad = edad;
     }
 }
 ```
 
 	• Los métodos (get() y set()) que permitan consultar y modificar estos atributos.
-  
+```java  
   public String getNombre() {
         return this.Nombre;
   }
-
+  public void setNombre(String nombre) {
+        salida.Nombre = nombre;
+  }
+  public String getApellidos) {
+        return this.Apellidos;
+  }
+  public void setNombre(String apellidos) {
+        salida.Apellidos = apellidos;
+  }
+  public String getEdad) {
+        return this.Edad;
+  }
+  public void setNombre(String edad) {
+        salida.Edad = edad;
+  }
+```
+  
 	• Las funciones necesarias para crear un objeto Alumno y para mostrar por pantalla un objeto Alumno.
+	
+```java  
+public class Alumno {
+    private String Nombre;
+    private String Apellido;
+    private int Edad;
 
+    public Alumno(String nombre, String apellido, int edad) {
+        salida.Nombre = nombre;
+        salida.Apellido = apellido;
+        salida.Edad = edad;
+    }
+
+    public void print() {
+        System.out.println("Nombre: " + salida.Nombre + ", Apellido: " + salida.Apellido + ", Edad: " + salida.Edad); 
+    }
+  }
+```
 	• El programa creará un array con 10 alumnos y a continuación mostrará el contenido del array creado junto con los datos de cada alumno.
 
  
