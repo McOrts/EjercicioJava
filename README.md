@@ -89,7 +89,16 @@ public class Alumno {
 ```
 	• El programa creará un array con 10 alumnos y a continuación mostrará el contenido del array creado junto con los datos de cada alumno.
 
- 
+```java 
+Alumno[] alumnoArray = new Alumno[10];
+for (int i = 0; i < alumnoArray.length; i++) {
+    alumnoArray[i] = new Alumno( "Name " + i , "Surname " + i );
+}
+for (Alumno a : alumnoArray) {
+    a.print();
+}
+```
+
 ## EJERCICIO 2
 
 Programe una web que tenga un formulario, pida los datos personales de una persona y realice las siguientes acciones:
