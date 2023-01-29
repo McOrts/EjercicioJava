@@ -73,17 +73,17 @@ public class Alumno {
 ```java  
 public class Alumno {
     private String Nombre;
-    private String Apellido;
+    private String Apellidos;
     private int Edad;
 
-    public Alumno(String nombre, String apellido, int edad) {
+    public Alumno(String nombre, String apellidos, int edad) {
         salida.Nombre = nombre;
-        salida.Apellido = apellido;
+        salida.Apellido = apellidos;
         salida.Edad = edad;
     }
 
     public void print() {
-        System.out.println("Nombre: " + salida.Nombre + ", Apellido: " + salida.Apellido + ", Edad: " + salida.Edad); 
+        System.out.println("Nombre: " + salida.Nombre + ", Apellidos: " + salida.Apellidos + ", Edad: " + salida.Edad); 
     }
   }
 ```
@@ -92,7 +92,7 @@ public class Alumno {
 ```java 
 Alumno[] alumnoArray = new Alumno[10];
 for (int i = 0; i < alumnoArray.length; i++) {
-    alumnoArray[i] = new Alumno( "Name " + i , "Surname " + i );
+    alumnoArray[i] = new Alumno( "Nombre " + i , "Apellidos " + i , "Edad " + i );
 }
 for (Alumno a : alumnoArray) {
     a.print();
@@ -107,5 +107,41 @@ Programe una web que tenga un formulario, pida los datos personales de una perso
 
 	• Una vez rellena la fecha de nacimiento muestre un mensaje indicando la edad del usuario de la web.
 
-Cree un botón que al pulsarlo borre los datos del formulario y aparezca el formulario en blanco.
+```javascript
+<form action="process.php" method="post"> 
+Nombre: <input type="text" name="nombre" required/><br/> 
+Apellidos: <input type="text" name="apellidos" required/><br/> 
+Edad de nacimiento: <input type="date" name="nacimiento" required/><br/> 
+<input type="submit" value="Submit"/> 
+</form> 
  
+<script>
+function validaFormulario() { 
+ var NombreValor = document.querySelector("input[name='nombre']").value; 
+ var ApellidoValor = document.querySelector("input[name='apellido']").value; 
+ var NacimientoValor = document.querySelector("input[name='nacimiento']").value; 
+ if(NombreValor != "" || ApelidoValor != "") { 
+  alert("Usted es: " + NombreValor + " " + ApelidoValor); 
+  return false; 
+ }
+ 
+</script>
+```
+
+Cree un botón que al pulsarlo borre los datos del formulario y aparezca el formulario en blanco.
+
+```javascript
+<script>
+
+function resetForm() { 
+ document.querySelector("input[name='name']").value = "";
+ document.querySelector("input[name='dob']").value = "";
+}
+
+var el = document.createElement('button');
+el.innerText = 'Reset';
+el.onclick = resetForm;
+document.body.appendChild(el);
+
+</script>
+```
